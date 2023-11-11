@@ -2,7 +2,8 @@
 
 ## To do:
 
-- (bsumner): Cleaning up my old C code to adhere to my degree of standards nowadays
+- (bsumner): Cleaning up my old C code to adhere to my degree of standards nowadays (In Progress)
+- (bsumner): Work on porting TikTakToe.cc to work with the GBA Code
 - (arshiaessl): Try to get the GBA development SDK up and running. We can meet up, too,
   if you want some help setting it up! Also install mgba to play the built gba rom.
 
