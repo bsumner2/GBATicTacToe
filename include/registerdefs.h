@@ -30,7 +30,7 @@
 // Ex usage: struct FOO {...} PACKED;                 // Forces struct members to be packed.
 
 
-#define SCREEN_WIDTH                            240 //Define bakes these constants into the instructions, vs declaring consts which takes up valuable memory.
+#define SCREEN_WIDTH                            240 
 #define SCREEN_HEIGHT                           160
 
 //#define IWRAM
@@ -45,9 +45,9 @@
 #define BG_MODE                                 0x0400
 
 
-#define REG_DISPLAY                             (* (volatile uint32 *) (MEMIO)) //IO Register for video out.
-#define REG_DISPLAY_VCOUNT                      (* (volatile uint32 *) (MEMIO + 0x0006)) //IO Register for vcount (used to find out what pixel is being drawn at the moment)
-#define REG_DISPLAY_INPUT                       (* (volatile uint32 *) (MEMIO + 0x0130)) //IO Register for input
+#define REG_DISPLAY                             (* (volatile uint32 *) (MEMIO))
+#define REG_DISPLAY_VCOUNT                      (* (volatile uint32 *) (MEMIO + 0x0006))
+#define REG_DISPLAY_INPUT                       (* (volatile uint32 *) (MEMIO + 0x0130))
 
 
 #define SCREENBUFFER                            ((volatile uint16 *) (VRAM))

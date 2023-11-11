@@ -1,0 +1,135 @@
+[
+ {
+  "directory": "/home/burton/repos/git/GBATicTacToe",
+  "arguments": [
+   "g++",
+   "-std=c++17",
+   "-Wall",
+   "-I",
+   ".",
+   "./src/TikTakToe.cc",
+   "-o",
+   "./bin/TikTakToe.elf"
+  ],
+  "file": "./src/TikTakToe.cc"
+ },
+ {
+  "directory": "/home/burton/repos/git/GBATicTacToe",
+  "arguments": [
+   "arm-none-eabi-gcc",
+   "-c",
+   "src/menu_driver.c",
+   "-mthumb",
+   "-O2",
+   "-Wall",
+   "-fno-strict-aliasing",
+   "-I./include",
+   "-I/opt/devkitpro/devkitARM/arm-none-eabi/include",
+   "-o",
+   "bin/menu_driver.o"
+  ],
+  "file": "src/menu_driver.c"
+ },
+ {
+  "directory": "/home/burton/repos/git/GBATicTacToe",
+  "arguments": [
+   "arm-none-eabi-gcc",
+   "-c",
+   "src/function_impls.c",
+   "-mthumb",
+   "-O2",
+   "-Wall",
+   "-fno-strict-aliasing",
+   "-I./include",
+   "-I/opt/devkitpro/devkitARM/arm-none-eabi/include",
+   "-o",
+   "bin/function_impls.o"
+  ],
+  "file": "src/function_impls.c"
+ },
+ {
+  "directory": "/home/burton/repos/git/GBATicTacToe",
+  "arguments": [
+   "arm-none-eabi-gcc",
+   "-c",
+   "src/game_tiles.c",
+   "-mthumb",
+   "-O2",
+   "-Wall",
+   "-fno-strict-aliasing",
+   "-I./include",
+   "-I/opt/devkitpro/devkitARM/arm-none-eabi/include",
+   "-o",
+   "bin/game_tiles.o"
+  ],
+  "file": "src/game_tiles.c"
+ },
+ {
+  "directory": "/home/burton/repos/git/GBATicTacToe",
+  "arguments": [
+   "arm-none-eabi-gcc",
+   "-c",
+   "src/menu_btns.c",
+   "-mthumb",
+   "-O2",
+   "-Wall",
+   "-fno-strict-aliasing",
+   "-I./include",
+   "-I/opt/devkitpro/devkitARM/arm-none-eabi/include",
+   "-o",
+   "bin/menu_btns.o"
+  ],
+  "file": "src/menu_btns.c"
+ },
+ {
+  "directory": "/home/burton/repos/git/GBATicTacToe",
+  "arguments": [
+   "arm-none-eabi-gcc",
+   "-c",
+   "src/game_loop.c",
+   "-mthumb",
+   "-O2",
+   "-Wall",
+   "-fno-strict-aliasing",
+   "-I./include",
+   "-I/opt/devkitpro/devkitARM/arm-none-eabi/include",
+   "-o",
+   "bin/game_loop.o"
+  ],
+  "file": "src/game_loop.c"
+ },
+ {
+  "directory": "/home/burton/repos/git/GBATicTacToe",
+  "arguments": [
+   "arm-none-eabi-gcc",
+   "-c",
+   "src/main.c",
+   "-mthumb",
+   "-O2",
+   "-Wall",
+   "-fno-strict-aliasing",
+   "-I./include",
+   "-I/opt/devkitpro/devkitARM/arm-none-eabi/include",
+   "-o",
+   "bin/main.o"
+  ],
+  "file": "src/main.c"
+ },
+ {
+  "directory": "/home/burton/repos/git/GBATicTacToe",
+  "arguments": [
+   "arm-none-eabi-gcc",
+   "-c",
+   "src/menu_bg.c",
+   "-mthumb",
+   "-O2",
+   "-Wall",
+   "-fno-strict-aliasing",
+   "-I./include",
+   "-I/opt/devkitpro/devkitARM/arm-none-eabi/include",
+   "-o",
+   "bin/menu_bg.o"
+  ],
+  "file": "src/menu_bg.c"
+ }
+]

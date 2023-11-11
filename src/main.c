@@ -30,24 +30,24 @@ int playerSpeedConst = 2;
 
 
 
-int main()
+int main(void)
 {
-    //---------------------------------------------[INIT]--------------------------------------------------------------
-    #if 1
+  //---------------------------------------------[INIT]--------------------------------------------------------------
+#if 1
 
-    while(1)
+  while(1)
+  {
+    uint8 menu_selection = main_menu();
+    if(menu_selection) return 0;
+    else
     {
-        uint8 menu_selection = main_menu();
-        if(menu_selection) return 0;
-        else
-        {
-            game_loop();
-        }
+      game_loop();
     }
+  }
 
-    #else
-    game_loop();
-    #endif
+#else
+  game_loop();
+#endif
 
-    return 0;
+  return 0;
 }

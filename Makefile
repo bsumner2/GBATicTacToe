@@ -13,6 +13,8 @@ SRC=./src
 BIN=./bin
 INC=./include
 
+MINIMAX_CXX_FLAGS=-std=c++17 -Wall -I .
+MINIMAX_CXX=g++
 C_OBJS=$(shell find $(SRC) -type f -iname '*.c' | sed 's-\./src-\./bin-g' | sed 's/\.c/\.o/g')
 CXX_OBJS=$(shell find $(SRC) -type f -iname '*.cpp' | sed 's-\./src-\./bin-g' | sed 's/\.cpp/\.o/g')
 
@@ -22,11 +24,12 @@ CC=$(PREFIX)gcc
 CXX=$(PREFIX)g++
 LD=$(PREFIX)g++
 OBJ_CPY=$(PREFIX)objcopy
+ARM_STDINCS=/opt/devkitpro/devkitARM/arm-none-eabi/include
 
 ARCH=-mthumb-interwork -mthumb
 SPECS=-specs=gba.specs
 
-CFLAGS=$(ARCH) -O2 -Wall -fno-strict-aliasing -I$(INC)
+CFLAGS=$(ARCH) -O2 -Wall -fno-strict-aliasing -I$(INC) -I$(ARM_STDINCS)
 LDFLAGS=$(ARCH) $(SPECS)
 
 .PHONY: build clean
@@ -58,3 +61,7 @@ clean:
 	@rm -fv $(BIN)/*.elf
 	@rm -fv $(BIN)/*.o
 	@rm -fv $(BIN)/*.gba
+
+target: ./src/TikTakToe.cc
+	$(MINIMAX_CXX) $(MINIMAX_CXX_FLAGS) ./src/TikTakToe.cc -o ./bin/TikTakToe.elf
+	./bin/TikTakToe.elf

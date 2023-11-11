@@ -1,4 +1,10 @@
-// Written by Burton O Sumner
+/** 
+ * Authors:
+ * - Jasper Vijn Caern (almost all typedefs and macro defs)
+ *      (https://www.coranac.com/tonc/text/toc.htm)
+ * - Burton O Sumner (Rect and bmp and word_alignedbmp typedefs)
+ */
+
 #ifndef TYPES_H
 #define TYPES_H
 
@@ -24,13 +30,13 @@
 #define PACKED          __attribute__((packed))
 
 
-typedef unsigned char                           uint8; //Unsigned char is 8 bits, which are stored as unsigned 8 bit ints.
+typedef unsigned char                           uint8;
 typedef unsigned short                          uint16;
 typedef unsigned int                            uint32;
 
 typedef signed char                             int8;
 typedef signed short                            int16;
-typedef signed int                              int32; // I recognize this typedef alias is redundant and I very likely wont even use it, but for sake of my ocd, it remains.
+typedef signed int                              int32;
 
 
 typedef uint16 bmp[];
