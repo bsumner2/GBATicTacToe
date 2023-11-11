@@ -9,6 +9,7 @@ using std::string;
 using std::runtime_error;
 
 class State{
+    // The dimention of our board
     static const int kdim = 3;
     friend ostream& operator << (ostream& whereto, const State& s);
    // Game layout 2D char array of - , X , O
@@ -69,6 +70,7 @@ class State{
         return 0;
        }
     }
+    // Check if the char 'x' won the game 
     bool ifWon(char x) {
         for (int i = 0; i < kdim; ++i) {
             if (layOut_[0][i] == x && layOut_[1][i] == x &&
@@ -91,7 +93,7 @@ class State{
         return false;
             
     }
-
+    // Set based on a 2D char array
     void setlayOut(char layOut[][kdim] ){
         for (int i = 0; i < kdim; ++i) {
             for (int j = 0; j < kdim; ++j) {
@@ -100,7 +102,7 @@ class State{
         }
         setString();
     }
-
+    // set the "change" to the position a and b 
     void setij(int a, int b, char change) {
         if(layOut_[a][b] == '-'){
             layOut_[a][b] = change;
@@ -130,9 +132,12 @@ class State{
     }
 
  private:
+    // The String representation of the game OOX\nXOX\nXOX
     string dim_;
+    // Char 2D array saving each spot
     char** layOut_;
-    bool finished_;
+    // Value of the state if the game is finishe, 1 for X win, -1 for 
+    //  O win and 0 for tie
     int value_;
 
     void setString(){
@@ -147,7 +152,7 @@ class State{
 
 
 };
-
+// Overriding the << operator
 ostream& operator << (ostream& whereto, const State& r){
     whereto << r.dim_; 
     return whereto;
@@ -178,7 +183,7 @@ friend class State;
         nextTurn();
         return currentState_;
     }
-
+    // Finding all possible next steps
     State* nextStates(){
         State* states = new State[4];
         State s = State();
@@ -187,7 +192,7 @@ friend class State;
         states[2] = s;
         return states;
     }
-
+    // get current state
     State* getState() {return currentState_;}
  private:
     char turn;
