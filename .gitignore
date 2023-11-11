@@ -1,3 +1,7 @@
-./.cache
-./.cache/*
-./bin/*
+.cache
+.cache/*
+bin/*
+*.o
+*.elf
+*.sav
+
