@@ -38,7 +38,7 @@ LDFLAGS=$(ARCH) $(SPECS)
 
 .SILENT:
 
-test: clean build
+gba: clean build
 	mgba-qt $(BIN)/$(TARGET).gba &
 
 build: $(TARGET).gba
@@ -62,6 +62,6 @@ clean:
 	@rm -fv $(BIN)/*.o
 	@rm -fv $(BIN)/*.gba
 
-target: ./src/TikTakToe.cc
+minimax_tic_tac_toe: ./src/TikTakToe.cc
 	$(MINIMAX_CXX) $(MINIMAX_CXX_FLAGS) ./src/TikTakToe.cc -o ./bin/TikTakToe.elf
 	./bin/TikTakToe.elf

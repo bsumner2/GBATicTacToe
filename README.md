@@ -8,15 +8,15 @@
 
 ## Notes:
 
-I moved TikTacToe.cc to ./src and adjusted your makefile to accomodate this change!
-Since there are two makefiles now, I just made a shell script, ./run_make.sh \<target\>,
-, that takes in a param for which makefile to run.
-``` shell
-# Script command opt to build and run GBA Executable:
-./run_make.sh gba_driver
+I moved TikTacToe.cc to ./src and added the TikTakToe.cc build target into
+the GBA makefile, its target name is minimax_tic_tac_toe
 
-# Script command opt to build and run the Minimax algorithm-based GBA TUI Executable:
-./run_make.sh cpu_driver
+``` shell
+# Make target to build & run the Minimax TicTacToe cpu player TUI driver:
+make minimax_tic_tac_toe
+
+# Make target to build & run the GBA Tic Tac Toe ROM:
+make gba
 ```
 
 
