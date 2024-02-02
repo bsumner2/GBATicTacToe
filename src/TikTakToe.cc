@@ -46,6 +46,9 @@ class State{
 
    // Check if the state is finished
     bool checkFinish(){
+        if (ifWon('X') || ifWon('O')) {
+            return true;
+        }
         for (int i = 0; i < kdim; ++i) {
             for (int j = 0; j < kdim; ++j) {
                 if (this->layOut_[i][j] == '-'){
@@ -145,7 +148,7 @@ class State{
         dim_ = "";
         for (int i = 0; i < kdim; ++i) {
             for (int j = 0; j < kdim; ++j) {
-                dim_ += layOut_[i][j];
+                dim_ += layOut_[j][i];
             }
             dim_+="\n";
         }
@@ -217,15 +220,26 @@ int main() {
     Game g = Game();
     State* s = g.getState();
 
-    char userInp = 'p';
     int a,b;
-    while (userInp != 'x') {
-        cout << "Input a and b" << endl;
+
+    cout << *s << endl;
+    while (true) {
+
+        cout << "Input x and y (0,1,2)"<< "This is " << g.getTurn() <<" Turn:"<< endl;
         cin >> a >> b;
-        cout << "put x to finish p to continue" << endl;
         g.play(a,b);
         cout << *s << endl;
-        cin >> userInp;
+        if(s->checkFinish()) {
+            int won = s->score();
+            if (won == 1) {
+                cout << "X Won!" << endl;
+            } else if (won == -1) {
+                cout << "O Won!" << endl;
+            } else if (won == 0) {
+                cout << "Tie!" << endl;
+            }
+            break;
+        }
         
     }
 
