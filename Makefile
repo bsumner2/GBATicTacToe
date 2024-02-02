@@ -38,7 +38,10 @@ LDFLAGS=$(ARCH) $(SPECS)
 test: clean build
 	mgba-qt $(BIN)/$(TARGET).gba &
 
-build: $(TARGET).gba
+build: ./bin $(TARGET).gba
+
+./bin:
+	mkdir -p ./bin
 
 $(TARGET).gba: $(TARGET).elf
 	$(OBJ_CPY) -v -O binary $(BIN)/$< $(BIN)/$@
