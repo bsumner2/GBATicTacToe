@@ -103,6 +103,7 @@ class State{
         setString();
     }
     // set the "change" to the position a and b 
+    // if the place if empty 
     void setij(int a, int b, char change) {
         if(layOut_[a][b] == '-'){
             layOut_[a][b] = change;
@@ -174,7 +175,7 @@ friend class State;
     char getTurn(){
         return turn;
     }
-
+    // Play the square of (a,b)
     State* play(int a, int b){
         if(currentState_->checkFinish()){
             return currentState_;
@@ -215,37 +216,79 @@ int main() {
     const int kSize = 3;
     Game g = Game();
     State* s = g.getState();
-    
-    cout << *s << endl;
 
-    for (int i = 0; i < kSize + 5 ; ++i) {
-        g.play(0,0);
-        cout << *s ;
-        if(s->checkFinish()) {
-            cout << s->score() << endl;
-        }
+    char userInp = 'p';
+    int a,b;
+    while (userInp != 'x') {
+        cout << "Input a and b" << endl;
+        cin >> a >> b;
+        cout << "put x to finish p to continue" << endl;
+        g.play(a,b);
+        cout << *s << endl;
+        cin >> userInp;
+        
     }
-    g.play(0,0);
-    cout << *s << endl; 
-    g.play(0,0);
-    cout << *s << endl; 
-    // for (int i = 0; i < 10; ++i) {
-    //     s.nextTurn();
-    //     cout << s.getTurn() << endl;
+
+// cout << *s << endl;
+
+//     for (int i = 0; i < kSize + 5 ; ++i) {
+//         g.play(0,0);
+//         cout << *s ;
+//         if(s->checkFinish()) {
+//             cout << s->score() << endl;
+//         }
+//     }
+//     g.play(0,0);
+//     cout << *s << endl; 
+//     g.play(0,0);
+//     cout << *s << endl; 
+//     // for (int i = 0; i < 10; ++i) {
+//     //     s.nextTurn();
+//     //     cout << s.getTurn() << endl;
+//     // }
+//     cout << "____" << endl;
+//     State j = *s;
+//     j.setij(2,2,'O');
+//     State* states;
+//     states = g.nextStates();
+//     cout << sizeof(states);
+//     for (int i = 0; i < 4; ++i) {
+//         if (&states[i] != nullptr) {
+//             cout << states[i];
+//         }else{
+//             cout << "NULL PTR" << endl;
+//         }
+//     }
+//     // cout << *s << endl;
+
+    // for (int i = 0; i < kSize + 5 ; ++i) {
+    //     g.play(0,0);
+    //     cout << *s ;
+    //     if(s->checkFinish()) {
+    //         cout << s->score() << endl;
+    //     }
     // }
-    cout << "____" << endl;
-    State j = *s;
-    j.setij(2,2,'O');
-    State* states;
-    states = g.nextStates();
-    cout << sizeof(states);
-    for (int i = 0; i < 4; ++i) {
-        if (&states[i] != nullptr) {
-            cout << states[i];
-        }else{
-            cout << "NULL PTR" << endl;
-        }
-    }
+    // g.play(0,0);
+    // cout << *s << endl; 
+    // g.play(0,0);
+    // cout << *s << endl; 
+    // // for (int i = 0; i < 10; ++i) {
+    // //     s.nextTurn();
+    // //     cout << s.getTurn() << endl;
+    // // }
+    // cout << "____" << endl;
+    // State j = *s;
+    // j.setij(2,2,'O');
+    // State* states;
+    // states = g.nextStates();
+    // cout << sizeof(states);
+    // for (int i = 0; i < 4; ++i) {
+    //     if (&states[i] != nullptr) {
+    //         cout << states[i];
+    //     }else{
+    //         cout << "NULL PTR" << endl;
+    //     }
+    // }
     return 0;
 }
 
